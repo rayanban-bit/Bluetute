@@ -191,7 +191,7 @@ type, joins it with the benchmark answer key, and writes the scored
 `results/*_results.csv` — that's the source of every number in
 `docs/Bluetute_Documentation.docx`.
 
-## What's left (honest, from the table above)
+## What's left (honestl)
 
 The diagnostic chain (Nodes 1–5: Input Parser → Reasoning Analyzer →
 Misconception Classifier → Adversarial Critic → Diagnosis Selector) is
@@ -201,12 +201,8 @@ claim, and it's proven out in `docs/Bluetute_Documentation.docx`.
 
 Not yet benchmarked, by deliberate scope choice for this submission:
 
-1. **Nodes 6–8** (Intervention Planner, Socratic Tutor, Response
-   Evaluator) — prompts are fully written (`prompts/05_*`, `06_*`, `07_*`)
-   but not yet run against the benchmark. The same manual-AI-Studio +
-   `eval/*` scoring pattern used for Nodes 1–5 applies directly.
-2. **Backend/frontend** — intentionally deferred; the spec's own priority
+1. **Backend/frontend** — intentionally deferred; the spec's own priority
    order is to measure the workflow before building a UI around it.
-3. **Cross-model routing experiment** — running the Critic on a different
+2. **Cross-model routing experiment** — running the Critic on a different
    model/provider than the Analyzer/Classifier, to test the "diversity"
    hypothesis in `prompts/03_adversarial_critic.py`'s docstring.
