@@ -176,32 +176,6 @@ stronger model; Input Parser is pure structuring → cheap/fast model). These
 are hypotheses to test in the ablation study (section 15 of the spec, plan
 in `docs/ablation.md` once written), not conclusions.
 
-## Status vs. the 22-step plan
-
-| # | Step | Status |
-|---|------|--------|
-| 1 | Misconception taxonomy | ✅ `taxonomy/misconception_taxonomy.py` |
-| 2 | 30 benchmark cases | ✅ `benchmark/cases.py` → `benchmark/cases.csv` |
-| 3 | Single-prompt baseline | ✅ done — 26/30 (86.7%) exact-match diagnosis accuracy, see `results/baseline_results.csv` |
-| 4 | Reasoning Analyzer | ✅ done — 27/30 (90.0%) error_type accuracy, see `results/analyzer_analysis.md` |
-| 5 | Test 3 prompt versions | ✅ v1 (90.0%) → v2 (100.0%) confirmed, 0 regressions. **Final full pipeline v2: 28/30 = 93.3% exact-match (29/30 = 96.7% w/ legitimate alt) vs. baseline's 86.7%** — see `results/classifier_followup_analysis.md`. v3 not currently needed. |
-| 6 | Misconception Classifier | ✅ done — 19/20 (95.0%) exact-match, 0 invented ids, see `results/classifier_analysis.md` |
-| 7 | Adversarial Critic | ✅ done — 20/20 diagnosis_survives (100%, flagged as a v2 signal — see `results/critic_analysis.md`) |
-| 8 | Diagnosis Selector | ✅ done — 19/20 (95.0%) final accuracy, 0 changes vs. Classifier this run. **Full pipeline (Nodes 1-6) vs. baseline comparison: see `results/pipeline_vs_baseline.md`** |
-| 9 | Intervention Planner | ✅ prompt v1 written; ⏳ not yet run |
-| 10 | Socratic Tutor | ✅ prompt v1 written; ⏳ not yet run |
-| 11 | Response Evaluator | ✅ prompt v1 written; ⏳ not yet run |
-| 12 | Adaptive loop | ❌ not started |
-| 13 | Compare models | ❌ not started |
-| 14 | Ablation tests | ❌ not started |
-| 15 | Compute metrics | ❌ not started (harness scaffolding exists: `eval/ingest_baseline.py`) |
-| 16 | Backend | ❌ not started (by design — spec says workflow first) |
-| 17 | Frontend | ❌ not started (by design) |
-| 18 | Final benchmark | ✅ diagnostic chain (Nodes 1-5) fully benchmarked, v1→v2 loop closed — see row 5 above. Intervention chain (Nodes 6-8) deferred, see row 9-11. |
-| 19 | Workflow PNG | ✅ `diagram/workflow.png` — full node-by-node diagram with model/io/purpose/measured-stat per box, adaptive loop, Student Model store |
-| 20 | Documentation | ✅ `docs/Bluetute_Documentation.docx` — 17-section report (architecture, taxonomy, v1→v2 methodology, full results, 3 worked samples, ablation, honest limitations, project story) |
-| 21 | Video | ❌ not started — user-recorded, outside this repo's scope |
-| 22 | Submission | ⏳ ready to package once video is recorded — code + docx + PNG are submission-ready now |
 
 ## Evaluation methodology
 
